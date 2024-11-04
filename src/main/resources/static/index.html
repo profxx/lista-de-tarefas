@@ -15,45 +15,47 @@
   </head>
   <body>
     <div class="container">
-        
-        <h1>Lista de Tarefas</h1>
+      <h1>Lista de Tarefas</h1>
 
-        <!-- Barra Input -->
-        <div class="input-group flex-nowrap">
-            <span class="input-group-text" id="addon-wrapping">Nova Tarefa</span>
-            <input type="text" class="form-control" aria-label="Username" aria-describedby="addon-wrapping"/>
-            <button type="button" class="btn btn-primary">Adicionar</button>
-        </div>
+      <!-- Barra Input -->
+      <div class="input-group flex-nowrap">
+        <span class="input-group-text" id="addon-wrapping">Nova Tarefa</span>
+        <input type="text"
+          class="form-control"
+          aria-label="Username"
+          aria-describedby="addon-wrapping"
+          id="mensagem"
+        />
+        <button type="button" class="btn btn-primary" onclick="cadastrarTarefa()">Adicionar</button>
+      </div>
 
-        <!-- Tabela 1 - A FAZER -->
-        <table class="table">
-            <thead>
-              <tr>
-                <th scope="col">Tarefa</th>
-                <th scope="col">Status</th>
-                <th scope="col">Opções</th>
-              </tr>
-            </thead>
-            <tbody id="listaafazer">
-              <!-- TAREFAS AQUI -->            
-            </tbody>
-          </table>
+      <!-- Tabela 1 - A FAZER -->
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Tarefa</th>
+            <th scope="col">Status</th>
+            <th scope="col">Opções</th>
+          </tr>
+        </thead>
+        <tbody id="listaafazer">
+          <!-- TAREFAS AQUI -->
+        </tbody>
+      </table>
 
-
-        <!-- Tabela 2 - CONCLUÍDA -->
-        <table class="table">
-            <thead>
-              <tr>
-                <th scope="col">Tarefa</th>
-                <th scope="col">Status</th>
-                <th scope="col">Opções</th>
-              </tr>
-            </thead>
-            <tbody id="listaconcluida">
-              <!-- TAREFAS AQUI -->            
-            </tbody>
-          </table>
-
+      <!-- Tabela 2 - CONCLUÍDA -->
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Tarefa</th>
+            <th scope="col">Status</th>
+            <th scope="col">Opções</th>
+          </tr>
+        </thead>
+        <tbody id="listaconcluida">
+          <!-- TAREFAS AQUI -->
+        </tbody>
+      </table>
     </div>
     <!-- JavaScript Bootstrap -->
     <script

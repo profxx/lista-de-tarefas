@@ -17,14 +17,31 @@ function mostrarTarefas(){
         .then((jsonresponse) => {
             listaafazer.innerHTML = jsonresponse
                 .filter((tarefa) => tarefa.status == "a fazer")
-                .map(convertTarefaToTr)
-                .join("")
+                .map(convertTarefaToTr).join("");
+            
             listaconcluida.innerHTML = jsonresponse
                 .filter((tarefa) => tarefa.status == "concluída")
-                .map(convertTarefaToTr)
-                .join("")
+                .map(convertTarefaToTr).join("");
+
         })
         .catch((error) => "MostraTarefas: " + error)
 }
+function cadastrarTarefa(){
+    let mensagem = document.getElementById("mensagem").value;
+    fetch("../tarefas", {
+        method: "POST",
+        headers:{"Content-Type":"application/json"},
+        body: JSON.stringify({
+            "nome": mensagem,
+            "status": "a fazer"
+        })
+    })
+        .then(() => {
+            document.getElementById("mensagem").value = "";
+            mostrarTarefas();
+        })
+}
+
+
 
 mostrarTarefas();
